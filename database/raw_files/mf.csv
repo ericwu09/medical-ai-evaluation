@@ -1,0 +1,67 @@
+,Name of device or algorithm,Name of parent company,Short description,FDA approval number,Type of FDA approval,Mention of A.I. in announcement,If no mention of A.I. in FDA announcement,Date,Medical specialty,Secondary medical specialty
+0,Arterys Cardio DL,Arterys Inc,software analyzing cardiovascular images from MR,K163253,510(k) premarket notification,deep learning,,2016 11,Radiology,Cardiology
+1,EnsoSleep,"EnsoData, Inc",diagnosis of sleep disorders,K162627,510(k) premarket notification,automated algorithm,,2017 03,Neurology,
+2,Arterys Oncology DL,Arterys Inc,medical diagnostic application,K173542,510(k) premarket notification,deep learning,,2017 11,Radiology,Oncology
+3,Idx,IDx LLC,detection of diabetic retinopathy,DEN180001,de novo pathway,A.I.,,2018 01,Ophthalmology,
+4,ContaCT,Viz.AI,stroke detection on CT,DEN170073,de novo pathway,A.I.,,2018 02,Radiology,Neurology
+5,OsteoDetect,"Imagen Technologies, Inc.",X-ray wrist fracture diagnosis,DEN180005,de novo pathway,deep learning,,2018 02,Radiology,Emergency medicine
+6,Guardian Connect System,Medtronic,predicting blood glucose changes,P160007,PMA,A.I.,,2018 03,Endocrinology,
+7,EchoMD Automated Ejection Fraction Software,"Bay Labs, Inc.",echocardiogram analysis,K173780,510(k) premarket notification,machine learning,,2018 05,Radiology,Cardiology
+8,DreaMed,"DreaMed Diabetes, Ltd",managing Type 1 diabetes.,DEN170043,de novo pathway,A.I.,,2018 06,Endocrinology,
+9,LungQ,Thirona Corporation,Quantitative analysis of chest CT scans,K173821,PMA,Not available,https://bit.ly/2EkHTCM,2018 06,Radiology,Pulmonology
+10,BriefCase,"Aidoc Medical, Ltd.",triage and diagnosis of time sensitive patients,K180647,510(k) premarket notification,deep learning,,2018 07,Radiology,Emergency medicine
+11,ProFound™ AI Software V2.1,"iCAD, Inc",breast density via mammogprahy,K191994,510(k) premarket notification,deep learning,,2018 07,Radiology,Oncology
+12,SubtlePET,"Subtle Medical, Inc",radiology image processing software,K182336,510(k) premarket notification,deep neural network-based algorithm,,2018 09,Radiology,
+13,Arterys MICA,Arterys Inc,Liver and lung cancer diagnosis on CT and MRI,K182034,510(k) premarket notification,A.I.,,2018 08,Radiology,Oncology
+14,AI-ECG Platform,"Shenzhen Carewell Electronics., Ltd",ECG analysis support,K180432,510(k) premarket notification,AI-ECG,,2018 09,Cardiology,
+15,Accipiolx,MaxQ-Al Ltd,acute intracranial hemorrhage triage algorithm,K182177,510(k) premarket notification,artificial intelligence algorithm,,2018 10,Radiology,Neurology
+16,icobrain,icometrix NV,MRI brain interpretation,K181939,510(k) premarket notification,machine learning and deep learning,,2018 10,Radiology,Neurology
+17,FerriSmart Analysis System,Resonance Health Analysis Service Pty Ltd,measure liver iron concentration,K182218,510(k) premarket notification,artificial intelligence,,2018 11,Internal Medicine,
+18,cmTriage,"CureMetrix, Inc.",Mammogram workflow,K183285,510(k) premarket notification,artificial intelligence algorithm,,2019 03,Radiology,Oncology
+19,Deep Learning Image Reconstruction,"GE Medical Systems, LLC.",CT image reconstruction,K183202,510(k) premarket notification,deep learning,,2019 04,Radiology,
+20,HealthPNX,Zebra Medical Vision Ltd.,Chest X-Ray assessment pneumothorax,K190362,510(k) premarket notification,artificial intelligence,,2019 05,Radiology,Emergency medicine
+21,Advanced Intelligent Clear-IQ Engine (AiCE),Canon Medical Systems Corporation,Noise reduction algorithm,K183046,510(k) premarket notification,Deep Convolutional Neural Network,,2019 06,Radiology,
+22,SubtleMR,"Subtle Medical, Inc",radiology image processing software,K191688,510(k) premarket notification,convulutional neural network,,2019 07,Radiology,
+23,AI-Rad Companion (Pulmonary),"Siemens Medical Solutions USA, Inc.",CT image reconstruction - pulmonary,K183271,510(k) premarket notification,deep learning,,2019 07,Radiology,
+24,Critical Care Suite,"GE Medical Systems, LLC.",Chest X-Ray assessment pneumothorax,K183182,510(k) premarket notification,artificial intelligence algorithms,,2019 08,Radiology,Emergency medicine
+25,AI-Rad Companion (Cardiovascular),"Siemens Medical Solutions USA, Inc.",CT image reconstruction - cardiovascular,K183268,510(k) premarket notification,deep learning,,2019 09,Radiology,
+26,EchoGo Core,Ultromics Ltd.,quantification and reporting of results of cardiovascular function,K191171,510(k) premarket notification,machine learning-based algorithms,,2019 11,Cardiology,Radiology
+27,TransparaTM,Screenpoint Medical B.V.,Mammogram workflow,K192287,510(k) premarket notification,machine learning components,,2019 12,Radiology,Oncology
+28,QuantX,"Quantitative Insights, Inc",Radiological software for lesions suspicious for cancer,DEN170022,de novo pathway,artificial intelligence algorithm,,2020 01,Radiology,Oncology
+29,Eko Analysis Software,Eko Devices Inc.,Cardiac Monitor,K192004,510(k) premarket notification,artificial neural network,,2020 01,Cardiology,
+30,BodyGuardian Remote Monitoring System,Preventice,Remote monitoring device for patients with cardiac arrhythmias,K121197,510(k) premarket notification,Not available,https://bit.ly/3czSSF2,2012 08,Cardiology,
+31,Temporal Comparison,Riverain Technologies,Chest X-Ray Scanning Software,K123526,510(k) premarket notification,Not available,https://wb.md/2ww0IiD,2012 12,Radiology,
+32,Ahead 100,BrainScope,Device to interprete the structural condition of the patient’s brain after head injury.,DEN140025,de novo pathway,Not available,https://bit.ly/2TqDweq,2014 08,Neurology,
+33,AliveCor,AliveCor,detection of atrial fibrillation,K140933,510(k) premarket notification,Not available,https://bit.ly/3323d8n,2014 08,Cardiology,
+34,QbCheck,QbTech AB,diagnosis and treatment of ADHD,K143468,510(k) premarket notification,Not available,https://bit.ly/39wKdBl,2016 03,Psychiatry,
+35,Steth IO,"Stratoscientific, Inc.",acoustic device to collect heartand lung sounds,K160016,510(k) premarket notification,Not available,https://stethio.com/ai/,2016 07,General medicine,
+36,Cantab Mobile,CAMBRIDGE COGNITION LTD.,memory assessment for the elderly,K161328,510(k) premarket notification,Not available,https://bit.ly/39uIYm7,2017 01,Neurology,Geriatrics
+37,AmCAD-US,AmCad BioMed Corporation,analysis of thyroid nodules,K162574,510(k) premarket notification,Not available,https://bloom.bg/38pWbeR,2017 05,Radiology,Endocrinology
+38,"Rooti Rx System ECG Event Recorder, Rooti Link APP Software",Rooti Labs Ltd,wearable continuous ECG monitor,K163694,510(k) premarket notification,Not available,https://bit.ly/3cuSdEO,2017 11,Cardiology,
+39,BioFlux,Biotricity Inc.,detecting arrhythmias,K172311,510(k) premarket notification,Not available,https://bit.ly/2VX36t4,2017 12,Cardiology,
+40,WAVE Clinical Platform,"Excel Medical Electronics, LLC",Monitoring vital signs,K171056,510(k) premarket notification,Not available,https://bit.ly/2Iqfz0C,2018 01,Hospital monitoring,
+41,DM-Density,"Densitas, Inc.",Breast density via mammogprahy,K170540,510(k) premarket notification,Not available,https://bit.ly/3azmgJU,2018 02,Radiology,
+42,NeuralBot,"Neural Analytics, Inc.",transcranial Doppler probe positioning,K180455,510(k) premarket notification,Not available,https://bit.ly/2ItFape,2018 04,Radiology,
+43,HealthCCS,Zebra Medical Vision Ltd.,coronary artery calcification algorithm,K172983,510(k) premarket notification,Not available,https://bit.ly/2uYRSJE,2018 05,Radiology,Cardiology
+44,MindMotion GO,MindMaze SA,software with rehabilitation exercises for the elderly,K173931,510(k) premarket notification,Not available,https://bit.ly/2wDsvxi,2018 05,Orthopedics,
+45,ECG App,"Apple, Inc.",detection of atrial fibrillation,DEN180044,de novo pathway,Not available,https://bit.ly/3cB7eFd,2018 08,Cardiology,
+46,FibriCheck,Qompium NV,Cardiac Monitor,K173872,510(k) premarket notification,Not available,https://bit.ly/2VOzZIr,2018 09,Cardiology,
+47,Irregular Rhythm Notification Feature,Apple Inc.,detection of atrial fibrillation,DEN180042,de novo pathway,Not available,https://bit.ly/2TqDMdo,2018 09,Cardiology,
+48,RightEye Vision System,"RightEye, LLC",identifying visual tracking impairment,K181771,510(k) premarket notification,Not available,https://bit.ly/32XTIXC,2018 09,Ophthalmology,
+49,FluoroShield™,"Omega Medical Imaging, LLC",Radiation dosage reduction,K191713,510(k) premarket notification,Not available,https://bit.ly/2Tsb23W,2018 10,Radiology,
+50,Embrace,Empatica Srl,wearable for seizure monitoring,K181861,510(k) premarket notification,Not available,https://bit.ly/3aCnC6n,2018 11,Neurology,
+51,iSchemaView RAPID,"iSchemaView, Inc.",stroke detection on CT and MRI,K182130,510(k) premarket notification,Not available,https://bwnews.pr/32Xl1l4,2018 12,Radiology,
+52,Quantib ND,Quantib BV,Neurodegenerative disease MRI brain reading,K182564,510(k) premarket notification,Not available,https://bwnews.pr/2TI4LQP,2018 12,Radiology,
+53,Study Watch,Verily Life Sciences LLC,ECG feature of the Study Watch,K182456,510(k) premarket notification,Not available,https://bit.ly/38oRFgw,2019 01,Cardiology,
+54,KardiaAI,"AliveCor, Inc",six-lead smartphone ECG,K181823,510(k) premarket notification,Not available,https://bit.ly/2vMd5a1,2019 03,Cardiology,
+55,Loop System,"Spry Health, Inc.",Monitoring vital signs,K181352,510(k) premarket notification,Not available,https://bit.ly/2xgTzD8,2019 03,Hospital monitoring,
+56,RhythmAnalytics,Biofourmis Singapore Pte. Ltd,Monitoring cardiac arrhythmias,K182344,510(k) premarket notification,Not available,https://bit.ly/32TABhC,2019 03,Cardiology,
+57,eMurmer ID,CSD Labs GmbH,Heart murmur detection,K181988,510(k) premarket notification,Not available,https://bit.ly/2TI4zkz,2019 04,Cardiology,
+58,ReSET-O,"Pear Therapeutics, Inc.",adjuvant treatment of substance abuse disorder,K173681,510(k) premarket notification,Not available,https://bit.ly/3cC0zKT,2019 5,Psychiatry,
+59,ACR | LAB Urine Analysis Test System,Healthy.io Ltd,Urinary tract infection diagnosis,K182384,510(k) premarket notification,Not available,https://bit.ly/3axoyJj,2019 07,Urology / General practise,
+60,Current Wearable Health Monitoring System,Current Health Ltd.,Monitoring vital signs,K191272,510(k) premarket notification,Not available,https://bit.ly/2VQDHBi,2019 07,Hospital monitoring,
+61,physIQ Heart Rhythm and Respiratory Module,"physIQ, Inc",detection of atrial fibrillation,K183322,510(k) premarket notification,Not available,https://bit.ly/2TtjiAP,2019 07,Cardiology,
+62,RayCare 2.3,RaySearch Laboratories AB,Medical charged-particle radiation therapy system,K191384,510(k) premarket notification,Not available,https://bit.ly/2vB0yXb,2019 07,Radiology,
+63,Biovitals Analytics Engine,Biofourmis Singapore Pte. Ltd,Cardiac Monitor,K183282,510(k) premarket notification,Not available,https://bit.ly/2IrQbHW,2019 08,Cardiology,
+64,Caption Guidance,"Caption Health, Inc.",Software to assist medical professionals in the acquisition of cardiac ultrasound images.,DEN190040,de novo pathway,artificial intelligence,,2019 08,Radiology,
+65,BrainScope TBI,"BrainScope Company, Inc",EEG-based Concussion Index,K190815,510(k) premarket notification,Not available,https://bit.ly/3azmYGZ,2019 09,Neurology,
