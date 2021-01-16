@@ -37,7 +37,9 @@
       data-search-highlight="true"
       data-show-columns="true"
       data-show-columns-toggle-all="true"
-      data-show-columns-search="true">
+      data-show-columns-search="true"
+      data-detail-view="true"
+      data-detail-formatter="detailFormatter">
 
   <thead>
     <tr style="text-align: center;">
@@ -82,6 +84,15 @@
       if (b == 'NA') return -1;
       return Number(b) - Number(a)
     }
+    function detailFormatter(index, row) {
+    var html = ""
+    $.each(row, function (key, value) {
+      if (key == 'indications_for_use') {
+        html = value
+      }
+    })
+    return html
+  }
   </script>
 </body>
 </html>
