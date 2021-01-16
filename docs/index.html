@@ -43,14 +43,14 @@
      	<th data-field='approval_number' data-sortable='true' data-visible='true' data-switchable='true'>approval_number</th>
 		<th data-field='device_name' data-sortable='true' data-visible='true' data-switchable='true'>device_name</th>
 		<th data-field='classification_product_code' data-sortable='true' data-visible='false' data-switchable='true'>classification_product_code</th>
-		<th data-field='date_received' data-sortable='true' data-visible='false' data-switchable='true'>date_received</th>
-		<th data-field='decision_date' data-sortable='true' data-visible='true' data-switchable='true'>decision_date</th>
+		<th data-field='date_received' data-sortable='true' data-sorter="datesSorter" data-visible='false' data-switchable='true'>date_received</th>
+		<th data-field='decision_date' data-sortable='true' data-sorter="datesSorter" data-visible='true' data-switchable='true'>decision_date</th>
 		<th data-field='indications_for_use' data-sortable='true' data-visible='false' data-switchable='true'>indications_for_use</th>
 		<th data-field='body_area' data-sortable='true' data-visible='true' data-switchable='true'>body_area</th>
 		<th data-field='modality' data-sortable='true' data-visible='true' data-switchable='true'>modality</th>
 		<th data-field='predicate_numbers' data-sortable='true' data-visible='false' data-switchable='true'>predicate_numbers</th>
-		<th data-field='sample_size' data-sortable='true' data-visible='true' data-switchable='true'>sample_size</th>
-		<th data-field='num_sites' data-sortable='true' data-visible='true' data-switchable='true'>num_sites</th>
+		<th data-field='sample_size' data-sortable='true' data-sorter="numSorter" data-visible='true' data-switchable='true'>sample_size</th>
+		<th data-field='num_sites' data-sortable='true' data-sorter="numSorter" data-visible='true' data-switchable='true'>num_sites</th>
 		<th data-field='inc_exc_criteria' data-sortable='true' data-visible='true' data-switchable='true'>inc_exc_criteria</th>
 		<th data-field='has_demographics' data-sortable='true' data-visible='true' data-switchable='true'>has_demographics</th>
 		<th data-field='is_prospective' data-sortable='true' data-visible='true' data-switchable='true'>is_prospective</th>
@@ -70,10 +70,14 @@
       //$('#table').bootstrapTable('hideColumn', 'query_id');
     })
     function datesSorter(a, b) {
-  if (new Date(a) < new Date(b)) return 1;
-  if (new Date(a) > new Date(b)) return -1;
-  return 0;
-}
+      if (new Date(a) < new Date(b)) return 1;
+      if (new Date(a) > new Date(b)) return -1;
+      return 0;
+    }
+    function numSorter(a, b) {
+      if a == 'NA': return -1;
+      return a < b
+    }
   </script>
 </body>
 </html>
