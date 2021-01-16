@@ -28,8 +28,8 @@
   <div class="container-fluid mx-lg-auto">
 
     <h1>Medical AI FDA Submissions</h1>
-    <table border="1" class="dataframe table-bordered table-striped table-hover"
-    	
+    <table id="table" border="1" class="dataframe table-bordered table-striped table-hover"
+    	data-toggle="table"
  		data-url="table.json">
   <thead>
     <tr style="text-align: center;">
@@ -43,7 +43,7 @@
 </table>
   <script>
     $(function() {
-      $('#table').bootstrapTable();
+      $('#table').bootstrapTable({l});
       //$('#table').bootstrapTable('hideColumn', 'query_id');
     })
     function datesSorter(a, b) {
