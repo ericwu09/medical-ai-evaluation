@@ -126,9 +126,11 @@
     var color = Chart.helpers.color;
     var barChartData = {
       labels: ['2017', '2018', '2019', '2020'],
-      datasets: [{
+      datasets: [
+      {
         label: 'AI Devices approved',
         yAxisID: 'A',
+        stack: 'main',
         backgroundColor: color(window.chartColors.blue).alpha(0.5).rgbString(),
         borderColor: window.chartColors.blue,
         borderWidth: 1,
@@ -138,6 +140,17 @@
       },
       {
         label: 'AI Devices reporting multisite evaluation',
+        yAxisID: 'A',
+        stack: 'main',
+        backgroundColor: color(window.chartColors.blue).alpha(0.5).rgbString(),
+        borderColor: window.chartColors.blue,
+        borderWidth: 1,
+        data: [
+        1, 8, 8, 20
+        ]
+      },
+      {
+        label: 'Median study sample size',
         yAxisID: 'B',
         backgroundColor: color(window.chartColors.green).alpha(0.5).rgbString(),
         borderColor: window.chartColors.green,
@@ -166,6 +179,7 @@
           },
           scales: {
            yAxes: [{
+            stacked: true,
             id: 'A',
             display: true,
             position: 'left',
