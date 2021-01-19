@@ -8,22 +8,22 @@
 
   <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.18.0/dist/bootstrap-table.min.css">
 
-<script src="jquery-3.5.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  <script src="jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/bootstrap-table@1.18.0/dist/bootstrap-table.min.js"></script>
   <script src="https://unpkg.com/bootstrap-table@1.18.0/dist/extensions/resizable/bootstrap-table-resizable.min.js"></script>
-<script src="Chart.min.js"></script>
+  <script src="Chart.min.js"></script>
   <script src="utils.js"></script>
   <style>
-  canvas {
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-  }
+    canvas {
+      -moz-user-select: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+    }
   </style>
 
-<title>Medical AI Evaluation Database</title>
+  <title>Medical AI Evaluation Database</title>
 
   <style type="text/css">
     html {
@@ -34,29 +34,29 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-md navbar-light mb-0 sticky-top" style="background-color: #efefef;">
-      <a class="navbar-brand" href="#">Medical AI Evaluation</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#database">Database</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#viz">Visualizations</a>
-          </li>
-        </ul>
-        
-      </div>
-    </nav>
+  <nav class="navbar navbar-expand-md navbar-light mb-0 sticky-top" style="background-color: #efefef;">
+    <a class="navbar-brand" href="#">Medical AI Evaluation</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#database">Database</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#viz">Visualizations</a>
+        </li>
+      </ul>
 
-    <main>
-      <div class="container-fluid bg-light mt-0" style="
-      background-image: url('bg.jpg');
-      background-size: cover;
-      ">
+    </div>
+  </nav>
+
+  <main>
+    <div class="container-fluid bg-light mt-0" style="
+    background-image: url('bg.jpg');
+    background-size: cover;
+    ">
     <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">
         <h1 class="fw-light">Medical AI Evaluation</h1>
@@ -73,53 +73,53 @@
 
     <h2>Device Database</h2>
     <table id="table" border="1" class="dataframe table-bordered table-striped table-hover"
-    	data-toggle="table"
-   		data-url="table.json"
-      data-height="600"
-      data-pagination="true"
-      data-search="true"
-      data-search-highlight="true"
-      data-show-columns="true"
-      data-show-columns-toggle-all="true"
-      data-show-columns-search="true"
-      data-detail-view="true"
-      data-detail-formatter="detailFormatter">
+    data-toggle="table"
+    data-url="table.json"
+    data-height="600"
+    data-pagination="true"
+    data-search="true"
+    data-search-highlight="true"
+    data-show-columns="true"
+    data-show-columns-toggle-all="true"
+    data-show-columns-search="true"
+    data-detail-view="true"
+    data-detail-formatter="detailFormatter">
 
-  <thead>
-    <tr style="text-align: center;">
-     	<th data-field='approval_number' data-sortable='true' data-visible='true' data-switchable='true'>approval_number</th>
-		<th data-field='device_name' data-sortable='true' data-visible='true' data-switchable='true'>device_name</th>
-		<th data-field='classification_product_code' data-sortable='true' data-visible='false' data-switchable='true'>classification_product_code</th>
-		<th data-field='date_received' data-sortable='true' data-sorter="datesSorter" data-visible='false' data-switchable='true'>date_received</th>
-		<th data-field='decision_date' data-sortable='true' data-sorter="datesSorter" data-visible='true' data-switchable='true'>decision_date</th>
-		<th data-field='indications_for_use' data-sortable='true' data-visible='false' data-switchable='true'>indications_for_use</th>
-		<th data-field='body_area' data-sortable='true' data-visible='true' data-switchable='true'>body_area</th>
-		<th data-field='modality' data-sortable='true' data-visible='true' data-switchable='true'>modality</th>
-		<th data-field='predicate_numbers' data-sortable='true' data-visible='false' data-switchable='true'>predicate_numbers</th>
-		<th data-field='sample_size' data-sortable='true' data-sorter="numSorter" data-visible='true' data-switchable='true'>sample_size</th>
-		<th data-field='num_sites' data-sortable='true' data-sorter="numSorter" data-visible='true' data-switchable='true'>num_sites</th>
-		<th data-field='inc_exc_criteria' data-sortable='true' data-visible='true' data-switchable='true'>inc_exc_criteria</th>
-		<th data-field='has_demographics' data-sortable='true' data-visible='true' data-switchable='true'>has_demographics</th>
-		<th data-field='is_prospective' data-sortable='true' data-visible='true' data-switchable='true'>is_prospective</th>
-		<th data-field='subtype_analysis' data-sortable='true' data-visible='true' data-switchable='true'>subtype_analysis</th>
-		<th data-field='significance' data-sortable='true' data-visible='false' data-switchable='true'>significance</th>
-		<th data-field='severity' data-sortable='true' data-visible='false' data-switchable='true'>severity</th>
-		<th data-field='risk_level' data-sortable='true' data-visible='true' data-switchable='true'>risk_level</th>
-		<th data-field='keywords' data-sortable='true' data-visible='true' data-switchable='true'>keywords</th>
-		<th data-field='summary_link' data-sortable='true' data-visible='false' data-switchable='true'>summary_link</th>
-    </tr>
-  </thead>
+    <thead>
+      <tr style="text-align: center;">
+        <th data-field='approval_number' data-sortable='true' data-visible='true' data-switchable='true'>approval_number</th>
+        <th data-field='device_name' data-sortable='true' data-visible='true' data-switchable='true'>device_name</th>
+        <th data-field='classification_product_code' data-sortable='true' data-visible='false' data-switchable='true'>classification_product_code</th>
+        <th data-field='date_received' data-sortable='true' data-sorter="datesSorter" data-visible='false' data-switchable='true'>date_received</th>
+        <th data-field='decision_date' data-sortable='true' data-sorter="datesSorter" data-visible='true' data-switchable='true'>decision_date</th>
+        <th data-field='indications_for_use' data-sortable='true' data-visible='false' data-switchable='true'>indications_for_use</th>
+        <th data-field='body_area' data-sortable='true' data-visible='true' data-switchable='true'>body_area</th>
+        <th data-field='modality' data-sortable='true' data-visible='true' data-switchable='true'>modality</th>
+        <th data-field='predicate_numbers' data-sortable='true' data-visible='false' data-switchable='true'>predicate_numbers</th>
+        <th data-field='sample_size' data-sortable='true' data-sorter="numSorter" data-visible='true' data-switchable='true'>sample_size</th>
+        <th data-field='num_sites' data-sortable='true' data-sorter="numSorter" data-visible='true' data-switchable='true'>num_sites</th>
+        <th data-field='inc_exc_criteria' data-sortable='true' data-visible='true' data-switchable='true'>inc_exc_criteria</th>
+        <th data-field='has_demographics' data-sortable='true' data-visible='true' data-switchable='true'>has_demographics</th>
+        <th data-field='is_prospective' data-sortable='true' data-visible='true' data-switchable='true'>is_prospective</th>
+        <th data-field='subtype_analysis' data-sortable='true' data-visible='true' data-switchable='true'>subtype_analysis</th>
+        <th data-field='significance' data-sortable='true' data-visible='false' data-switchable='true'>significance</th>
+        <th data-field='severity' data-sortable='true' data-visible='false' data-switchable='true'>severity</th>
+        <th data-field='risk_level' data-sortable='true' data-visible='true' data-switchable='true'>risk_level</th>
+        <th data-field='keywords' data-sortable='true' data-visible='true' data-switchable='true'>keywords</th>
+        <th data-field='summary_link' data-sortable='true' data-visible='false' data-switchable='true'>summary_link</th>
+      </tr>
+    </thead>
 
-</table>
+  </table>
 
 </div>
 
 <hr class="featurette-divider">
-  <div id="viz" class="container-fluid mx-lg-auto px-md-5">
+<div id="viz" class="container-fluid mx-lg-auto px-md-5">
 
-    <h2>Visualizations</h2>
+  <h2>Visualizations</h2>
 
-    <div id="container" class="col-lg-6 col-md-8 mx-auto", style="width: 75%;" >
+  <div id="container" class="col-lg-6 col-md-8 mx-auto", style="width: 75%;" >
     <canvas id="canvas"></canvas>
   </div>
   <script>
@@ -132,7 +132,7 @@
         borderColor: window.chartColors.blue,
         borderWidth: 1,
         data: [
-          8, 24, 31, 65
+        8, 24, 31, 65
         ]
       },
       {
@@ -143,10 +143,10 @@
         type: 'line',
         fill: false,
         data: [
-          10, 30, 35, 25
+        100, 300, 400, 250
         ]
       }]
-      };
+    };
 
     window.onload = function() {
       var ctx = document.getElementById('canvas').getContext('2d');
@@ -161,36 +161,54 @@
           title: {
             display: true,
             text: 'Devices over time'
-          }
-        }
-      });
+          },
+          scales: {
+           yAxes: [{
+            display: true,
+            position: 'right',
+            ticks: {
+             beginAtZero: true
+           }
+         }, {
+          display: true,
+          position: 'left',
+          ticks: {
+           beginAtZero: true,
+           max: 700,
+           min: 0,
+           stepSize: 100
+         }
+       }]
+     }
+   }
+ });
 
     };
     var colorNames = Object.keys(window.chartColors);
 
   </script>
 
-  </div>
+</div>
 
 </main>
-  <script>
-    $(function() {
-      $('#table').bootstrapTable();
+<script>
+  $(function() {
+    $('#table').bootstrapTable();
       //$('#table').bootstrapTable('hideColumn', 'query_id');
     })
-    function datesSorter(a, b) {
-      if (new Date(a) < new Date(b)) return 1;
-      if (new Date(a) > new Date(b)) return -1;
-      return 0;
-    }
-    function numSorter(a, b) {
-      a = a.replace(">", "")
-      b = b.replace(">", "")
-      if (a == 'NA') return 1;
-      if (b == 'NA') return -1;
-      return Number(b) - Number(a)
-    }
-    function detailFormatter(index, row) {
+  function datesSorter(a, b) {
+    if (new Date(a) < new Date(b)) return 1;
+    if (new Date(a) > new Date(b)) return -1;
+    return 0;
+  }
+  function numSorter(a, b) {
+    a = a.replace(">", "")
+    b = b.replace(">", "")
+    if (a == 'NA') return 1;
+    if (b == 'NA') return -1;
+    return Number(b) - Number(a)
+  }
+  function detailFormatter(index, row) {
     var html = ""
     $.each(row, function (key, value) {
       if (key == 'indications_for_use') {
@@ -199,6 +217,6 @@
     })
     return html
   }
-  </script>
+</script>
 </body>
 </html>
