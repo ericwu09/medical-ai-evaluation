@@ -164,10 +164,6 @@
       }
     };
 
-    window.onload = function() {
-      var ctx = document.getElementById('pie').getContext('2d');
-      window.myDoughnut = new Chart(ctx, config);
-    };
 
     var barChartData = {
       labels: ['2017', '2018', '2019', '2020'],
@@ -211,8 +207,12 @@
     };
 
     window.onload = function() {
-      var ctx = document.getElementById('bar').getContext('2d');
-      window.myBar = new Chart(ctx, {
+
+      var ctx1 = document.getElementById('pie').getContext('2d');
+      window.myDoughnut = new Chart(ctx1, config);
+
+      var ctx2 = document.getElementById('bar').getContext('2d');
+      window.myBar = new Chart(ctx2, {
         type: 'bar',
         data: barChartData,
         options: {
