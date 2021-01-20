@@ -120,10 +120,55 @@
   <h2>Visualizations</h2>
 
   <div id="container" class="col-lg-6 col-md-8 mx-auto", style="width: 75%;" >
-    <canvas id="canvas"></canvas>
+    <canvas id="bar"></canvas>
+    <canvas id="pie"></canvas>
   </div>
   <script>
     var color = Chart.helpers.color;
+
+    var pieChartData = {
+      type: 'doughnut',
+      data: {
+        datasets: [{
+          data: [
+            20, 25, 30, 25
+          ],
+          backgroundColor: [
+            window.chartColors.red,
+            window.chartColors.orange,
+            window.chartColors.yellow,
+            window.chartColors.green
+          ],
+          label: 'Body Area'
+        }],
+        labels: [
+          'Head',
+          'Chest',
+          'Breast',
+          'Other'
+        ]
+      },
+      options: {
+        responsive: true,
+        legend: {
+          position: 'top',
+        },
+        title: {
+          display: true,
+          text: 'Chart.js Doughnut Chart'
+        },
+        animation: {
+          animateScale: true,
+          animateRotate: true
+        }
+      }
+    };
+
+    window.onload = function() {
+      var ctx = document.getElementById('pie').getContext('2d');
+      window.myDoughnut = new Chart(ctx, config);
+    };
+
     var barChartData = {
       labels: ['2017', '2018', '2019', '2020'],
       datasets: [
@@ -166,7 +211,7 @@
     };
 
     window.onload = function() {
-      var ctx = document.getElementById('canvas').getContext('2d');
+      var ctx = document.getElementById('bar').getContext('2d');
       window.myBar = new Chart(ctx, {
         type: 'bar',
         data: barChartData,
@@ -190,7 +235,6 @@
            }
          }, {
           id: 'B',
-
           display: true,
           position: 'right',
           ticks: {
