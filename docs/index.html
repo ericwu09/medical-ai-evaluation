@@ -209,7 +209,7 @@
     window.onload = function() {
 
       var ctx1 = document.getElementById('pie').getContext('2d');
-      window.myDoughnut = new Chart(ctx1, config);
+      window.myDoughnut = new Chart(ctx1, pieChartData);
 
       var ctx2 = document.getElementById('bar').getContext('2d');
       window.myBar = new Chart(ctx2, {
@@ -250,7 +250,6 @@
  });
 
     };
-    var colorNames = Object.keys(window.chartColors);
 
   </script>
 
