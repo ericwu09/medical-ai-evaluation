@@ -121,8 +121,13 @@
 
   <div id="container" class="col-lg-6 col-md-8 mx-auto", style="width: 75%;" >
     <canvas id="bar"></canvas>
+  </div>
+
+  <div id="container" class="col-lg-6 col-md-8 mx-auto", style="width: 75%;" >
     <canvas id="pie"></canvas>
   </div>
+
+  
   <script>
     var color = Chart.helpers.color;
 
@@ -131,21 +136,24 @@
       data: {
         datasets: [{
           data: [
-            20, 25, 30, 25
+            13, 15, 17, 25, 60
           ],
           backgroundColor: [
             window.chartColors.red,
             window.chartColors.orange,
             window.chartColors.yellow,
-            window.chartColors.green
+            window.chartColors.green,
+            window.chartColors.blue,
+
           ],
           label: 'Body Area'
         }],
         labels: [
-          'Head',
           'Chest',
           'Breast',
-          'Other'
+          'Heart',
+          'Head'
+          'Multiple/Other'
         ]
       },
       options: {
@@ -155,7 +163,7 @@
         },
         title: {
           display: true,
-          text: 'Chart.js Doughnut Chart'
+          text: 'Body Area Treated by Devices'
         },
         animation: {
           animateScale: true,
