@@ -45,6 +45,7 @@
     -webkit-box-sizing: content-box;
     -moz-box-sizing: content-box;
     box-sizing: content-box;
+    background-color: rgba(255, 99, 132, 0.5)
 }
 
 .hovicon.highrisk:after {
@@ -53,10 +54,6 @@
 
 .hovicon.prospective:after {
     color: red;
-}
-
-.hovicon.multisite:after {
-    background-color: blue;
 }
 
 .hovicon.chest:after {
