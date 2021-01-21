@@ -136,10 +136,15 @@
   $.each( data, function( key, val ) {
     var classes = 'hovicon mini effect-9 sub-a'
     if (val['risk_level'] == '3' || val['risk_level'] == '4') {
-      classes += ' square'
-    } else {
-      html = ''
+      classes += ' highrisk'
     }
+    if (val['num_sites'] != 'NA' && val['num_sites'] != '1') {
+      classes += ' multisite'
+    }
+    if (val['is_prospective'] != '1') {
+      classes += ' prospective'
+    }
+    classes += ' '+val['body_area']
     var html = '<i class="'+classes+'" data-toggle="tooltip" data-placement="top" title="'+val['device_name']+'"></i>'
     $( "#figure" ).append(html)
   });

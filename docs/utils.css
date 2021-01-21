@@ -46,10 +46,19 @@
     -moz-box-sizing: content-box;
     box-sizing: content-box;
 }
-.hovicon.square:after {
-    border-radius: 0%;
 
+.hovicon.highrisk:after {
+    border-radius: 0%;
 }
+
+.hovicon.prospective:after {
+    color: red;
+}
+
+.hovicon.multisite:after {
+    background-color: blue;
+}
+
 .hovicon:before {
     speak: none;
     font-size: 48px;
