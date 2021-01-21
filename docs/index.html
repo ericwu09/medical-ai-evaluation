@@ -129,15 +129,25 @@
 </div>
 
 <div class="container-fluid col-lg-6 col-md-8 mx-lg-auto px-md-5 my-5" style="width: 410px;">
-  <button id="multisite" class="btn btn-primary">Show Multisite</button>
-    <button id="prospective" class="btn btn-primary">Show Prospective</button>
-    <button id="highrisk" class="btn btn-primary">Show High Risk</button>
+
+    <div class="btn-group btn-group-toggle my-5" data-toggle="buttons">
+      <label class="btn btn-secondary active">
+        <input type="radio" name="options" id="multisite" autocomplete="off"> Show Multisite
+    </label>
+    <label class="btn btn-secondary">
+        <input type="radio" name="options" id="prospective" autocomplete="off"> Show Prospective
+    </label>
+    <label class="btn btn-secondary">
+        <input type="radio" name="options" id="highrisk" autocomplete="off"> Show High Risk
+    </label>
+</div>
+
 <div id="figure" >
 
     <script>
         var head = [], heart = [], breast = [], chest = [], other = []
 
-       $.getJSON( "table.json", function( data ) {
+        $.getJSON( "table.json", function( data ) {
           $.each( data, function( key, val ) {
             var classes = 'hovicon mini effect-9 sub-a'
             if (val['risk_level'] == '1' || val['risk_level'] == '2') {
@@ -153,48 +163,48 @@
           classes += ' ' + body_area
           if (body_area == 'chest') {
             chest.push([val['device_name'], classes])
-          } else if (body_area == 'head') {
+        } else if (body_area == 'head') {
             head.push([val['device_name'], classes])
-          } else if (body_area == 'breast') {
+        } else if (body_area == 'breast') {
             breast.push([val['device_name'], classes])
-          } else if (body_area == 'heart') {
+        } else if (body_area == 'heart') {
             heart.push([val['device_name'], classes])
-          } else {
+        } else {
             other.push([val['device_name'], classes])
-          }
-          
-          
-      });
+        }
+
+
+    });
 
           [chest, head, breast, heart, other].forEach(function (item, index) {
-          item.forEach(function (x, idx) {
-            var html = '<i id="'+x[0]+'" class="'+x[1]+'" data-toggle="tooltip" data-placement="top" title="'+x[0]+'"></i>'
-            $( "#figure" ).append(html)
+              item.forEach(function (x, idx) {
+                var html = '<i id="'+x[0]+'" class="'+x[1]+'" data-toggle="tooltip" data-placement="top" title="'+x[0]+'"></i>'
+                $( "#figure" ).append(html)
+            });
           });
-      });
 
       });
 
 
 
-       $( "#multisite" ).click(function() {
-        $('.multisite').toggleClass('hover')
-        $('#multisite').toggleClass('active')
+        $( "#multisite" ).click(function() {
+            $('.multisite').toggleClass('hover')
+            $('#multisite').toggleClass('active')
         });
 
-       $( "#prospective" ).click(function() {
-        $('.prospective').toggleClass('hover')
-        $('#prospective').toggleClass('active')
-
-        });
-
-       $( "#highrisk" ).click(function() {
-        $('.highrisk').toggleClass('hover')
-        $('#highrisk').toggleClass('active')
+        $( "#prospective" ).click(function() {
+            $('.prospective').toggleClass('hover')
+            $('#prospective').toggleClass('active')
 
         });
 
-  </script>
+        $( "#highrisk" ).click(function() {
+            $('.highrisk').toggleClass('hover')
+            $('#highrisk').toggleClass('active')
+
+        });
+
+    </script>
 
 
 </div>
@@ -307,26 +317,26 @@ window.onload = function() {
           text: 'AI device approvals have increased in recent years, but multisite reporting and sample size has stagnated'
       },
       scales: {
-       yAxes: [{
+         yAxes: [{
           stacked: true,
           id: 'A',
           display: true,
           position: 'left',
           ticks: {
-             beginAtZero: true
-         }
-     }, {
-        id: 'B',
-        display: true,
-        position: 'right',
-        ticks: {
-           fontColor: color(window.chartColors.green).rgbString(),
-           beginAtZero: true,
-           max: 700,
-           min: 0,
-           stepSize: 100
+           beginAtZero: true
        }
-   }]
+   }, {
+    id: 'B',
+    display: true,
+    position: 'right',
+    ticks: {
+     fontColor: color(window.chartColors.green).rgbString(),
+     beginAtZero: true,
+     max: 700,
+     min: 0,
+     stepSize: 100
+ }
+}]
 }
 }
 });
