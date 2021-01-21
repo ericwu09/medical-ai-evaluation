@@ -144,7 +144,7 @@
     if (val['is_prospective'] != '1') {
       classes += ' prospective'
     }
-    classes += ' '+val['body_area']
+    classes += ' '+val['body_area'].toLowerCase()
     var html = '<i class="'+classes+'" data-toggle="tooltip" data-placement="top" title="'+val['device_name']+'"></i>'
     $( "#figure" ).append(html)
   });

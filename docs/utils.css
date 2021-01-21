@@ -59,6 +59,27 @@
     background-color: blue;
 }
 
+.hovicon.chest:after {
+    background-color: rgba(54, 162, 235, 0.5);
+}
+
+.hovicon.head:after {
+    background-color: rgba(75, 192, 192, 0.5);
+}
+
+.hovicon.breast:after {
+    background-color: rgba(255, 205, 86, 0.5);
+}
+
+.hovicon.heart:after {
+    background-color: rgba(54, 162, 235, 0.5);
+}
+
+.hovicon.multiple:after, .hovicon.other:after {
+    background-color: rgba(255, 99, 132, 0.5);
+}
+
+
 .hovicon:before {
     speak: none;
     font-size: 48px;
