@@ -129,9 +129,9 @@
 </div>
 
 <div class="container-fluid col-lg-6 col-md-8 mx-lg-auto px-md-5 my-5" style="width: 410px;">
-  <button id="multisite">Show Multisite</button>
-    <button id="prospective">Show Prospective</button>
-    <button id="highrisk">Show High Risk</button>
+  <button id="multisite" class="btn btn-primary">Show Multisite</button>
+    <button id="prospective" class="btn btn-primary">Show Prospective</button>
+    <button id="highrisk" class="btn btn-primary">Show High Risk</button>
 <div id="figure" >
 
     <script>
@@ -179,14 +179,19 @@
 
        $( "#multisite" ).click(function() {
         $('.multisite').toggleClass('hover')
+        $('#multisite').toggleClass('active')
         });
 
        $( "#prospective" ).click(function() {
         $('.prospective').toggleClass('hover')
+        $('#prospective').toggleClass('active')
+
         });
 
        $( "#highrisk" ).click(function() {
         $('.highrisk').toggleClass('hover')
+        $('#highrisk').toggleClass('active')
+
         });
 
   </script>
