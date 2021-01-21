@@ -128,6 +128,7 @@
     <canvas id="pie"></canvas>
   </div>
 
+  <div id="figure">
   <div class="row">
 
   <div class="block">
@@ -139,42 +140,8 @@
     </div>
 
   </div>
+</div>
 
-  <div class="row">
-
-  <div class="block">
-        <i class="hovicon mini effect-9 sub-a" data-toggle="tooltip" data-placement="top" title="Tooltip on top"></i>
-        <i class="hovicon mini effect-9 sub-a"></i>
-        <i class="hovicon mini effect-9 sub-a"></i>
-        <i class="hovicon mini effect-9 sub-a"></i>
-        <i class="hovicon mini effect-9 sub-a"></i>
-    </div>
-
-  </div>
-
-  <div class="row">
-
-  <div class="block">
-        <i class="hovicon mini effect-9 sub-a" data-toggle="tooltip" data-placement="top" title="Tooltip on top"></i>
-        <i class="hovicon mini effect-9 sub-a"></i>
-        <i class="hovicon mini effect-9 sub-a"></i>
-        <i class="hovicon mini effect-9 sub-a"></i>
-        <i class="hovicon mini effect-9 sub-a"></i>
-    </div>
-
-  </div>
-
-  <div class="row">
-
-  <div class="block">
-        <i class="hovicon mini square effect-9 sub-a" data-toggle="tooltip" data-placement="top" title="Tooltip on top"></i>
-        <i class="hovicon mini square effect-9 sub-a"></i>
-        <i class="hovicon mini square effect-9 sub-a"></i>
-        <i class="hovicon mini square effect-9 sub-a"></i>
-        <i class="hovicon mini square effect-9 sub-a"></i>
-    </div>
-
-  </div>
 <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" />
 
   <script>
@@ -253,7 +220,7 @@
         yAxisID: 'B',
         backgroundColor: color(window.chartColors.green).alpha(0.5).rgbString(),
         borderColor: window.chartColors.green,
-        borderWidth: 1,
+        borderWidth: 2,
         type: 'line',
         cubicInterpolationMode: "monotonic",
         fill: false,
@@ -313,7 +280,16 @@
 </div>
 
 </main>
+
 <script>
+
+ $.getJSON( "table.json", function( data ) {
+  $.each( data, function( key, val ) {
+    $( "#figure" ).append("Hello")
+  });
+ 
+});
+
   $(function () {
   $('[data-toggle="tooltip"]').tooltip()
 })
