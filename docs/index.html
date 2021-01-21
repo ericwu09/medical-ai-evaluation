@@ -128,16 +128,7 @@
     <canvas id="pie"></canvas>
   </div>
 
-  <div id="figure">
-  <div class="row">
-
-  <div class="block">
-        <i class="hovicon mini effect-9 sub-a" data-toggle="tooltip" data-placement="top" title="Tooltip on top"></i>
-        <i class="hovicon mini effect-9 sub-a"></i>
-        <i class="hovicon mini effect-9 sub-a"></i>
-        <i class="hovicon mini effect-9 sub-a"></i>
-        <i class="hovicon mini effect-9 sub-a"></i>
-    </div>
+  <div id="figure" class="container-fluid mx-lg-auto px-md-5">>
 
   </div>
 </div>
@@ -281,8 +272,11 @@
 
 <script>
 
+ var i = 0;
+ var j = 0;
  $.getJSON( "table.json", function( data ) {
   $.each( data, function( key, val ) {
+    console.log(val['risk_level'])
     var html = '<i class="hovicon mini effect-9 sub-a"></i>'
     $( "#figure" ).append(html)
   });
