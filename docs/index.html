@@ -129,7 +129,26 @@
   </div>
 
   <div id="figure" class="container-fluid col-lg-6 col-md-8 mx-lg-auto px-md-5 my-5" style="width: 400px;">
+    
+<script>
 
+ var i = 0;
+ var j = 0;
+ $.getJSON( "table.json", function( data ) {
+  $.each( data, function( key, val ) {
+    var classes = 'hovicon mini effect-9 sub-a'
+    if (val['risk_level'] == '3' || val['risk_level'] == '4') {
+      classes += ' square'
+    } else {
+      html = ''
+    }
+    var html = '<i class="'+classes+'" data-toggle="tooltip" data-placement="top" title="'+val['device_name']+'"></i>'
+    $( "#figure" ).append(html)
+  });
+ 
+});
+
+</script>
   </div>
 </div>
 
@@ -270,25 +289,7 @@
 
 </main>
 
-<script>
 
- var i = 0;
- var j = 0;
- $.getJSON( "table.json", function( data ) {
-  $.each( data, function( key, val ) {
-    var classes = 'hovicon mini effect-9 sub-a'
-    if (val['risk_level'] == '3' || val['risk_level'] == '4') {
-      classes += ' square'
-    } else {
-      html = ''
-    }
-    var html = '<i class="'+classes+'" data-toggle="tooltip" data-placement="top" title="'+val['device_name']+'"></i>'
-    $( "#figure" ).append(html)
-  });
- 
-});
-
-</script>
 
 <script>
 
