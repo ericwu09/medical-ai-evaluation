@@ -160,15 +160,17 @@
           } else {
             other.push([val['device_name'], classes])
           }
-          [chest, head, breast, heart, other].forEach(function (item, index) {
+          
+          
+      });
+
+      });
+
+       [chest, head, breast, heart, other].forEach(function (item, index) {
           item.forEach(function (x, idx) {
             var html = '<i id="'+x[0]+'" class="'+x[1]+'" data-toggle="tooltip" data-placement="top" title="'+x[0]+'"></i>'
             $( "#figure" ).append(html)
           });
-      });
-          
-      });
-
       });
 
        $( "#multisite" ).click(function() {
