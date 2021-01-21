@@ -138,10 +138,10 @@
        $.getJSON( "table.json", function( data ) {
           $.each( data, function( key, val ) {
             var classes = 'hovicon mini effect-9 sub-a'
-            if (val['risk_level'] == '3' || val['risk_level'] == '4') {
+            if (val['risk_level'] == '1' || val['risk_level'] == '2') {
               classes += ' highrisk'
           }
-          if (val['num_sites'] != 'NA' && val['num_sites'] != '1') {
+          if (val['num_sites'] == 'NA' || val['num_sites'] == '1') {
               classes += ' multisite'
           }
           if (val['is_prospective'] != '1') {
