@@ -276,8 +276,11 @@
  var j = 0;
  $.getJSON( "table.json", function( data ) {
   $.each( data, function( key, val ) {
-    console.log(val['risk_level'])
-    var html = '<i class="hovicon mini effect-9 sub-a"></i>'
+    if (val['risk_level'] == '3' || val['risk_level'] == '4') {
+      var html = '<i class="hovicon mini square effect-9 sub-a"></i>'
+    } else {
+      var html = '<i class="hovicon mini effect-9 sub-a"></i>'
+    }
     $( "#figure" ).append(html)
   });
  
