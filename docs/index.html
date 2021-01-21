@@ -21,17 +21,17 @@
       -moz-user-select: none;
       -webkit-user-select: none;
       -ms-user-select: none;
-    }
-  </style>
+  }
+</style>
 
-  <title>Medical AI Evaluation Database</title>
+<title>Medical AI Evaluation Database</title>
 
-  <style type="text/css">
+<style type="text/css">
     html {
       font-size: 0.75rem;
-    }
+  }
 
-  </style>
+</style>
 </head>
 <body>
 
@@ -39,21 +39,21 @@
     <a class="navbar-brand" href="#">Medical AI Evaluation</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
+  </button>
+  <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
           <a class="nav-link" href="#database">Database</a>
-        </li>
-        <li class="nav-item">
+      </li>
+      <li class="nav-item">
           <a class="nav-link" href="#viz">Visualizations</a>
-        </li>
-      </ul>
+      </li>
+  </ul>
 
-    </div>
-  </nav>
+</div>
+</nav>
 
-  <main>
+<main>
     <div class="container-fluid bg-light mt-0" style="
     background-image: url('bg.jpg');
     background-size: cover;
@@ -65,12 +65,12 @@
         <p>
           <a href="#" class="btn btn-primary my-2">View the Code</a>
           <a href="#" class="btn btn-secondary my-2">Read the Paper</a>
-        </p>
-      </div>
-    </div>
+      </p>
   </div>
+</div>
+</div>
 
-  <div id="database" class="container-fluid mx-lg-auto px-md-5 py-md-5 bg-light">
+<div id="database" class="container-fluid mx-lg-auto px-md-5 py-md-5 bg-light">
 
     <h2>Device Database</h2>
     <table id="table" border="1" class="dataframe table-bordered table-striped table-hover"
@@ -108,10 +108,10 @@
         <th data-field='risk_level' data-sortable='true' data-visible='true' data-switchable='true'>risk_level</th>
         <th data-field='keywords' data-sortable='true' data-visible='true' data-switchable='true'>keywords</th>
         <th data-field='summary_link' data-sortable='true' data-visible='false' data-switchable='true'>summary_link</th>
-      </tr>
-    </thead>
+    </tr>
+</thead>
 
-  </table>
+</table>
 
 </div>
 
@@ -122,171 +122,201 @@
 
   <div id="container" class="col-lg-6 col-md-8 mx-auto my-5", style="width: 75%;" >
     <canvas id="bar"></canvas>
-  </div>
-
-  <div id="container" class="col-lg-6 col-md-8 mx-auto my-5", style="width: 75%;" >
-    <canvas id="pie"></canvas>
-  </div>
-
-  <div id="figure" class="container-fluid col-lg-6 col-md-8 mx-lg-auto px-md-5 my-5" style="width: 410px;">
-
-<script>
-
- $.getJSON( "table.json", function( data ) {
-  $.each( data, function( key, val ) {
-    var classes = 'hovicon mini effect-9 sub-a'
-    if (val['risk_level'] == '3' || val['risk_level'] == '4') {
-      classes += ' highrisk'
-    }
-    if (val['num_sites'] != 'NA' && val['num_sites'] != '1') {
-      classes += ' multisite'
-    }
-    if (val['is_prospective'] != '1') {
-      classes += ' prospective'
-    }
-    classes += ' '+val['body_area'].toLowerCase()
-    var html = '<i class="'+classes+'" data-toggle="tooltip" data-placement="top" title="'+val['device_name']+'"></i>'
-    $( "#figure" ).append(html)
-  });
- 
-});
-
-</script>
-  </div>
 </div>
 
-  <script>
-    var color = Chart.helpers.color;
+<div id="container" class="col-lg-6 col-md-8 mx-auto my-5", style="width: 75%;" >
+    <canvas id="pie"></canvas>
+</div>
 
-    var pieChartData = {
-      type: 'doughnut',
-      data: {
-        datasets: [{
-          data: [
-            13, 15, 17, 25, 60
-          ],
-          backgroundColor: [
-            window.chartColors.red,
-            window.chartColors.orange,
-            window.chartColors.yellow,
-            window.chartColors.green,
-            window.chartColors.blue,
+<div id="figure" class="container-fluid col-lg-6 col-md-8 mx-lg-auto px-md-5 my-5" style="width: 410px;">
 
-          ],
-          label: 'Body Area'
-        }],
-        labels: [
-          'Chest',
-          'Breast',
-          'Heart',
-          'Head',
-          'Multiple/Other'
-        ]
-      },
+    <script>
+        var head = [], heart = [], breast = [], chest = [], other = []
+
+       $.getJSON( "table.json", function( data ) {
+          $.each( data, function( key, val ) {
+            var classes = 'hovicon mini effect-9 sub-a'
+            if (val['risk_level'] == '3' || val['risk_level'] == '4') {
+              classes += ' highrisk'
+          }
+          if (val['num_sites'] != 'NA' && val['num_sites'] != '1') {
+              classes += ' multisite'
+          }
+          if (val['is_prospective'] != '1') {
+              classes += ' prospective'
+          }
+          var body_area = val['body_area'].toLowerCase()
+          classes += ' ' + body_area
+          if (body_area == 'chest') {
+            chest.push(val['device_name'])
+          } elif (body_area == 'head') {
+            head.push(val['device_name'])
+          } elif (body_area == 'breast') {
+            breast.push(val['device_name'])
+          } elif (body_area == 'heart') {
+            heart.push(val['device_name'])
+          } else {
+            other.push(val['device_name'])
+          }
+          var html = '<i id="'+val['device_name']+'class="'+classes+'" data-toggle="tooltip" data-placement="top" title="'+val['device_name']+'"></i>'
+          $( "#figure" ).append(html)
+      });
+
+      });
+
+       $( "#multisite" ).click(function() {
+        alert( "Handler for .click() called." );
+        });
+
+       $( "#prospective" ).click(function() {
+        alert( "Handler for .click() called." );
+        });
+
+       $( "#highrisk" ).click(function() {
+        alert( "Handler for .click() called." );
+        });
+
+  </script>
+
+  <button id="multisite">Show Multisite</button>
+    <button id="prospective">Show Prospective</button>
+    <button id="highrisk">Show High Risk</button>
+
+</div>
+</div>
+
+<script>
+  var color = Chart.helpers.color;
+
+  var pieChartData = {
+    type: 'doughnut',
+    data: {
+      datasets: [{
+        data: [
+        13, 15, 17, 25, 60
+        ],
+        backgroundColor: [
+        window.chartColors.red,
+        window.chartColors.orange,
+        window.chartColors.yellow,
+        window.chartColors.green,
+        window.chartColors.blue,
+
+        ],
+        label: 'Body Area'
+    }],
+    labels: [
+    'Chest',
+    'Breast',
+    'Heart',
+    'Head',
+    'Multiple/Other'
+    ]
+},
+options: {
+  responsive: true,
+  legend: {
+    position: 'right',
+},
+title: {
+    display: true,
+    text: 'Body Area Treated by Devices'
+},
+animation: {
+    animateScale: true,
+    animateRotate: true
+}
+}
+};
+
+
+var barChartData = {
+    labels: ['2017', '2018', '2019', '2020'],
+    datasets: [
+
+    {
+      label: 'AI Devices reporting multisite evaluation',
+      yAxisID: 'A',
+      stack: 'main',
+      backgroundColor: color(window.chartColors.blue).alpha(0.5).rgbString(),
+      borderColor: window.chartColors.blue,
+      borderWidth: 1,
+      data: [
+      1, 8, 8, 20
+      ]
+  },
+  {
+      label: 'AI Devices approved',
+      yAxisID: 'A',
+      stack: 'main',
+      backgroundColor: color(window.chartColors.blue).alpha(0.1).rgbString(),
+      borderColor: window.chartColors.blue,
+      borderWidth: 1,
+      data: [
+      8, 24, 31, 65
+      ]
+  },
+  {
+      label: 'Median study sample size',
+      yAxisID: 'B',
+      backgroundColor: color(window.chartColors.green).alpha(0.5).rgbString(),
+      borderColor: window.chartColors.green,
+      borderWidth: 2,
+      type: 'line',
+      cubicInterpolationMode: "monotonic",
+      fill: false,
+      data: [
+      100, 300, 400, 250
+      ]
+  }]
+};
+
+window.onload = function() {
+
+    var ctx1 = document.getElementById('pie').getContext('2d');
+    window.myDoughnut = new Chart(ctx1, pieChartData);
+
+    var ctx2 = document.getElementById('bar').getContext('2d');
+    window.myBar = new Chart(ctx2, {
+      type: 'bar',
+      data: barChartData,
       options: {
         responsive: true,
         legend: {
-          position: 'right',
-        },
-        title: {
-          display: true,
-          text: 'Body Area Treated by Devices'
-        },
-        animation: {
-          animateScale: true,
-          animateRotate: true
-        }
-      }
-    };
-
-
-    var barChartData = {
-      labels: ['2017', '2018', '2019', '2020'],
-      datasets: [
-      
-      {
-        label: 'AI Devices reporting multisite evaluation',
-        yAxisID: 'A',
-        stack: 'main',
-        backgroundColor: color(window.chartColors.blue).alpha(0.5).rgbString(),
-        borderColor: window.chartColors.blue,
-        borderWidth: 1,
-        data: [
-        1, 8, 8, 20
-        ]
+          position: 'top',
       },
-      {
-        label: 'AI Devices approved',
-        yAxisID: 'A',
-        stack: 'main',
-        backgroundColor: color(window.chartColors.blue).alpha(0.1).rgbString(),
-        borderColor: window.chartColors.blue,
-        borderWidth: 1,
-        data: [
-        8, 24, 31, 65
-        ]
-      },
-      {
-        label: 'Median study sample size',
-        yAxisID: 'B',
-        backgroundColor: color(window.chartColors.green).alpha(0.5).rgbString(),
-        borderColor: window.chartColors.green,
-        borderWidth: 2,
-        type: 'line',
-        cubicInterpolationMode: "monotonic",
-        fill: false,
-        data: [
-        100, 300, 400, 250
-        ]
-      }]
-    };
-
-    window.onload = function() {
-
-      var ctx1 = document.getElementById('pie').getContext('2d');
-      window.myDoughnut = new Chart(ctx1, pieChartData);
-
-      var ctx2 = document.getElementById('bar').getContext('2d');
-      window.myBar = new Chart(ctx2, {
-        type: 'bar',
-        data: barChartData,
-        options: {
-          responsive: true,
-          legend: {
-            position: 'top',
-          },
-          title: {
-            display: true,
-            text: 'AI device approvals have increased in recent years, but multisite reporting and sample size has stagnated'
-          },
-          scales: {
-           yAxes: [{
-            stacked: true,
-            id: 'A',
-            display: true,
-            position: 'left',
-            ticks: {
-             beginAtZero: true
-           }
-         }, {
-          id: 'B',
+      title: {
           display: true,
-          position: 'right',
+          text: 'AI device approvals have increased in recent years, but multisite reporting and sample size has stagnated'
+      },
+      scales: {
+       yAxes: [{
+          stacked: true,
+          id: 'A',
+          display: true,
+          position: 'left',
           ticks: {
+             beginAtZero: true
+         }
+     }, {
+        id: 'B',
+        display: true,
+        position: 'right',
+        ticks: {
            fontColor: color(window.chartColors.green).rgbString(),
            beginAtZero: true,
            max: 700,
            min: 0,
            stepSize: 100
-         }
-       }]
-     }
-   }
- });
+       }
+   }]
+}
+}
+});
 
-    };
+};
 
-  </script>
+</script>
 
 </div>
 
@@ -297,34 +327,34 @@
 <script>
 
   $( "#figure" ).on("mouseover", "i", function() {
-  $('[data-toggle="tooltip"]').tooltip()
+    $('[data-toggle="tooltip"]').tooltip()
 })
 
   $(function() {
     $('#table').bootstrapTable();
       //$('#table').bootstrapTable('hideColumn', 'query_id');
-    })
+  })
   function datesSorter(a, b) {
     if (new Date(a) < new Date(b)) return 1;
     if (new Date(a) > new Date(b)) return -1;
     return 0;
-  }
-  function numSorter(a, b) {
+}
+function numSorter(a, b) {
     a = a.replace(">", "")
     b = b.replace(">", "")
     if (a == 'NA') return 1;
     if (b == 'NA') return -1;
     return Number(b) - Number(a)
-  }
-  function detailFormatter(index, row) {
+}
+function detailFormatter(index, row) {
     var html = ""
     $.each(row, function (key, value) {
       if (key == 'indications_for_use') {
         html = "<b>Indications for Use:</b> " + value
-      }
-    })
+    }
+})
     return html
-  }
+}
 </script>
 </body>
 </html>
