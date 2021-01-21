@@ -148,18 +148,23 @@
           var body_area = val['body_area'].toLowerCase()
           classes += ' ' + body_area
           if (body_area == 'chest') {
-            chest.push(val['device_name'])
+            chest.push([val['device_name'], classes])
           } else if (body_area == 'head') {
-            head.push(val['device_name'])
+            head.push([val['device_name'], classes])
           } else if (body_area == 'breast') {
-            breast.push(val['device_name'])
+            breast.push([val['device_name'], classes])
           } else if (body_area == 'heart') {
-            heart.push(val['device_name'])
+            heart.push([val['device_name'], classes])
           } else {
-            other.push(val['device_name'])
+            other.push([val['device_name'], classes])
           }
-          var html = '<i id="'+val['device_name']+'class="'+classes+'" data-toggle="tooltip" data-placement="top" title="'+val['device_name']+'"></i>'
-          $( "#figure" ).append(html)
+          for (y in [chest, head, breast, heart, other]) {
+          for (x in y) {
+            var html = '<i id="'+x[0]+'class="'+x[1]+'" data-toggle="tooltip" data-placement="top" title="'+x[0]+'"></i>'
+            $( "#figure" ).append(html)
+          }
+      }
+          
       });
 
       });
