@@ -48,9 +48,6 @@
     background-color: rgba(255, 99, 132, 0.5)
 }
 
-.hovicon.highrisk:after {
-    border-radius: 0%;
-}
 
 .hovicon.prospective:after {
     color: red;
