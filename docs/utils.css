@@ -86,7 +86,7 @@
     opacity: 0.5;
 }
 .hovicon.effect-9.sub-a:hover {
-    box-shadow: 0 0 0 10px rgba(255, 255, 255, 1);
+    /*box-shadow: 0 0 0 10px rgba(255, 255, 255, 1);*/
     color: #000;
 }
 .hovicon.effect-9.sub-a:hover i {
