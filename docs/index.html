@@ -285,7 +285,8 @@
 
  $.getJSON( "table.json", function( data ) {
   $.each( data, function( key, val ) {
-    $( "#figure" ).append("Hello")
+    var html = '<i class="hovicon mini effect-9 sub-a"></i>'
+    $( "#figure" ).append(html)
   });
  
 });
