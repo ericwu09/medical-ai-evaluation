@@ -128,9 +128,54 @@
     <canvas id="pie"></canvas>
   </div>
 
+  <div class="row">
+
   <div class="block">
-        <i class="hovicon effect-9 sub-a">P</i>
+        <i class="hovicon mini effect-9 sub-a" data-toggle="tooltip" data-placement="top" title="Tooltip on top"></i>
+        <i class="hovicon mini effect-9 sub-a"></i>
+        <i class="hovicon mini effect-9 sub-a"></i>
+        <i class="hovicon mini effect-9 sub-a"></i>
+        <i class="hovicon mini effect-9 sub-a"></i>
     </div>
+
+  </div>
+
+  <div class="row">
+
+  <div class="block">
+        <i class="hovicon mini effect-9 sub-a" data-toggle="tooltip" data-placement="top" title="Tooltip on top"></i>
+        <i class="hovicon mini effect-9 sub-a"></i>
+        <i class="hovicon mini effect-9 sub-a"></i>
+        <i class="hovicon mini effect-9 sub-a"></i>
+        <i class="hovicon mini effect-9 sub-a"></i>
+    </div>
+
+  </div>
+
+  <div class="row">
+
+  <div class="block">
+        <i class="hovicon mini effect-9 sub-a" data-toggle="tooltip" data-placement="top" title="Tooltip on top"></i>
+        <i class="hovicon mini effect-9 sub-a"></i>
+        <i class="hovicon mini effect-9 sub-a"></i>
+        <i class="hovicon mini effect-9 sub-a"></i>
+        <i class="hovicon mini effect-9 sub-a"></i>
+    </div>
+
+  </div>
+
+  <div class="row">
+
+  <div class="block">
+        <i class="hovicon mini square effect-9 sub-a" data-toggle="tooltip" data-placement="top" title="Tooltip on top"></i>
+        <i class="hovicon mini square effect-9 sub-a"></i>
+        <i class="hovicon mini square effect-9 sub-a"></i>
+        <i class="hovicon mini square effect-9 sub-a"></i>
+        <i class="hovicon mini square effect-9 sub-a"></i>
+    </div>
+
+  </div>
+<link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" />
 
   <script>
     var color = Chart.helpers.color;
@@ -163,7 +208,7 @@
       options: {
         responsive: true,
         legend: {
-          position: 'top',
+          position: 'right',
         },
         title: {
           display: true,
@@ -269,6 +314,10 @@
 
 </main>
 <script>
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+
   $(function() {
     $('#table').bootstrapTable();
       //$('#table').bootstrapTable('hideColumn', 'query_id');
