@@ -1,4 +1,11 @@
 
+.desc {
+    font-size: 12px;
+}
+
+.desc span {
+    display:block;
+}
 
 .hovicon {
     display: inline-block;
