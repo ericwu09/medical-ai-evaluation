@@ -121,88 +121,81 @@
 
   <h2>Visualizations</h2>
 
-  <div id="container" class="col-lg-6 col-md-8 mx-auto my-5", style="width: 75%;" >
-    <canvas id="bar"></canvas>
-</div>
 
-<div id="container" class="col-lg-6 col-md-8 mx-auto my-5", style="width: 75%;" >
-    <canvas id="pie"></canvas>
-</div>
+  <div class="container-fluid col-md-8 px-md-5 my-5">
+    <div class="row justify-content-center">
+        <h3>Device Summaries</h3>
+    </div>
+    <div class="row">
+        <div class="my-5" style="width: 430px;">
+          <button id="multisite" class="btn btn-outline-primary" data-toggle="button" aria-pressed="false">Show Multisite</button>
+          <button id="prospective" class="btn btn-outline-primary" data-toggle="button" aria-pressed="false">Show Prospective</button>
+          <button id="highrisk" class="btn btn-outline-primary" data-toggle="button" aria-pressed="false">Show High Risk</button>
+          <div id="figure" class="my-5">
 
-<div class="container-fluid col-md-8 px-md-5 my-5">
-<div class="row justify-content-center">
-    <h3>Device Summaries</h3>
-</div>
-<div class="row">
-<div class="my-5" style="width: 430px;">
-  <button id="multisite" class="btn btn-outline-primary" data-toggle="button" aria-pressed="false">Show Multisite</button>
-    <button id="prospective" class="btn btn-outline-primary" data-toggle="button" aria-pressed="false">Show Prospective</button>
-    <button id="highrisk" class="btn btn-outline-primary" data-toggle="button" aria-pressed="false">Show High Risk</button>
-<div id="figure" class="my-5">
+            <script>
+                var devices = {}
+                var head = [], heart = [], breast = [], chest = [], other = []
 
-    <script>
-        var devices = {}
-        var head = [], heart = [], breast = [], chest = [], other = []
+                $.getJSON( "table.json", function( data ) {
+                  $.each( data, function( key, val ) {
+                    devices[val['device_name']] = val
+                    var classes = 'hovicon mini effect-9 sub-a'
+                    if (val['risk_level'] == '1' || val['risk_level'] == '2') {
+                      classes += ' highrisk'
+                  }
+                  if (val['num_sites'] == 'NA' || val['num_sites'] == '1') {
+                      classes += ' multisite'
+                  }
+                  if (val['is_prospective'] != '1') {
+                      classes += ' prospective'
+                  }
+                  var body_area = val['body_area'].toLowerCase()
+                  classes += ' ' + body_area
+                  if (body_area == 'chest') {
+                    chest.push([val['device_name'], classes])
+                } else if (body_area == 'head') {
+                    head.push([val['device_name'], classes])
+                } else if (body_area == 'breast') {
+                    breast.push([val['device_name'], classes])
+                } else if (body_area == 'heart') {
+                    heart.push([val['device_name'], classes])
+                } else {
+                    other.push([val['device_name'], classes])
+                }
 
-       $.getJSON( "table.json", function( data ) {
-          $.each( data, function( key, val ) {
-            devices[val['device_name']] = val
-            var classes = 'hovicon mini effect-9 sub-a'
-            if (val['risk_level'] == '1' || val['risk_level'] == '2') {
-              classes += ' highrisk'
-          }
-          if (val['num_sites'] == 'NA' || val['num_sites'] == '1') {
-              classes += ' multisite'
-          }
-          if (val['is_prospective'] != '1') {
-              classes += ' prospective'
-          }
-          var body_area = val['body_area'].toLowerCase()
-          classes += ' ' + body_area
-          if (body_area == 'chest') {
-            chest.push([val['device_name'], classes])
-          } else if (body_area == 'head') {
-            head.push([val['device_name'], classes])
-          } else if (body_area == 'breast') {
-            breast.push([val['device_name'], classes])
-          } else if (body_area == 'heart') {
-            heart.push([val['device_name'], classes])
-          } else {
-            other.push([val['device_name'], classes])
-          }
-          
-          
-      });
 
-          [chest, head, breast, heart, other].forEach(function (item, index) {
-          item.forEach(function (x, idx) {
-            var html = '<i id="'+x[0]+'" class="'+x[1]+'" data-toggle="tooltip" data-placement="top" title="'+x[0]+'"></i>'
-            $( "#figure" ).append(html)
-          });
-      });
+            });
 
-      });
+                  [chest, head, breast, heart, other].forEach(function (item, index) {
+                      item.forEach(function (x, idx) {
+                        var html = '<i id="'+x[0]+'" class="'+x[1]+'" data-toggle="tooltip" data-placement="top" title="'+x[0]+'"></i>'
+                        $( "#figure" ).append(html)
+                    });
+                  });
+
+              });
 
 
 
-       $( "#multisite" ).click(function() {
-        $('.multisite').toggleClass('multisite-hover')
+                $( "#multisite" ).click(function() {
+                    $('.multisite').toggleClass('multisite-hover')
         //$('#multisite').toggleClass('active')
-        });
+    });
 
-       $( "#prospective" ).click(function() {
-        $('.prospective').toggleClass('prospective-hover')
+                $( "#prospective" ).click(function() {
+                    $('.prospective').toggleClass('prospective-hover')
         //$('#prospective').toggleClass('active')
 
-        });
+    });
 
-       $( "#highrisk" ).click(function() {
-        $('.highrisk').toggleClass('highrisk-hover')
+                $( "#highrisk" ).click(function() {
+                    $('.highrisk').toggleClass('highrisk-hover')
         //$('#highrisk').toggleClass('active')
 
-        });
+    });
 
-  </script>
+</script>
 
 </div>
 </div>
@@ -221,10 +214,20 @@
     <b>Has a Prospective Study?: </b><span id="desc_is_prospective"></span><br />
     <b>Has Subtype Analysis?: </b><span id="desc_subtype_analysis"></span><br />
     <b>FDA Summary Link: </b><span id="desc_summary_link"></span><br />
-    </div>
+</div>
 </div>
 
 </div>
+
+  <div id="container" class="col-lg-6 col-md-8 mx-auto my-5", style="width: 75%;" >
+    <canvas id="bar"></canvas>
+</div>
+
+<div id="container" class="col-lg-6 col-md-8 mx-auto my-5", style="width: 75%;" >
+    <canvas id="pie"></canvas>
+</div>
+
+
 </div>
 
 </div>
@@ -334,26 +337,26 @@ window.onload = function() {
           text: 'AI device approvals have increased in recent years, but multisite reporting and sample size has stagnated'
       },
       scales: {
-       yAxes: [{
+         yAxes: [{
           stacked: true,
           id: 'A',
           display: true,
           position: 'left',
           ticks: {
-             beginAtZero: true
-         }
-     }, {
-        id: 'B',
-        display: true,
-        position: 'right',
-        ticks: {
-           fontColor: color(window.chartColors.green).rgbString(),
-           beginAtZero: true,
-           max: 700,
-           min: 0,
-           stepSize: 100
+           beginAtZero: true
        }
-   }]
+   }, {
+    id: 'B',
+    display: true,
+    position: 'right',
+    ticks: {
+     fontColor: color(window.chartColors.green).rgbString(),
+     beginAtZero: true,
+     max: 700,
+     min: 0,
+     stepSize: 100
+ }
+}]
 }
 }
 });
@@ -374,7 +377,7 @@ window.onload = function() {
     $('[data-toggle="tooltip"]').tooltip()
 })
 
-$( "#figure" ).on("click", "i", function() {
+  $( "#figure" ).on("click", "i", function() {
     $("#figure i").removeClass('hover')
     $(this).addClass('hover')
     var device_name = $(this).attr('id')
