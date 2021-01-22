@@ -2,11 +2,10 @@
 .desc {
     font-size: 14px;
     padding-top: 100px;
-    line-height: 2;
+    line-height: 1.5;
 }
 
 .desc span {
-    display:block;
 }
 
 .hovicon {
