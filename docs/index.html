@@ -130,7 +130,7 @@
 </div>
 
 <div class="container-fluid col-md-8 px-md-5 my-5">
-<div class="row">
+<div class="row justify-content-center">
     <h3>Device Summaries</h3>
 </div>
 <div class="row">
@@ -141,10 +141,12 @@
 <div id="figure" class="my-5">
 
     <script>
+        var devices = {}
         var head = [], heart = [], breast = [], chest = [], other = []
 
        $.getJSON( "table.json", function( data ) {
           $.each( data, function( key, val ) {
+            devices[val['device_name']] = val
             var classes = 'hovicon mini effect-9 sub-a'
             if (val['risk_level'] == '1' || val['risk_level'] == '2') {
               classes += ' highrisk'
@@ -205,18 +207,20 @@
 </div>
 </div>
 <div class="col desc">
-    <b>Device Name:</b><span id="desc_name"></span>
-    <b>Approval Date:</b><span id="desc_date"></span>
-    <b>Body Area:</b><span id="desc_body"></span>
-    <b>Modality:</b><span id="desc_mode"></span>
-    <b>Sample Size:</b><span id="desc_size"></span>
-    <b>Number of Sites:</b><span id="desc_site"></span>
-    <b>Risk Level:</b><span id="desc_risk"></span>
-    <b>Has Inclusion/Exclusion Criteria?:</b><span id="desc_incc"></span>
-    <b>Has Demographic Data?:</b><span id="desc_demo"></span>
-    <b>Has a Prospective Study?:</b><span id="desc_pros"></span>
-    <b>Has Subtype Analysis?:</b><span id="desc_subt"></span>
-    <b>FDA Summary Link:</b><span id="desc_link"></span>
+    <b>Device Name:</b><span id="desc_device_name"></span>
+    <b>Approval Number:</b><span id="desc_approval_number"></span>
+    <b>Decision Date:</b><span id="desc_decision_date"></span>
+    <b>Indications for Use:</b><span id="desc_indications_for_use"></span>
+    <b>Body Area:</b><span id="desc_body_area"></span>
+    <b>Modality:</b><span id="desc_modality"></span>
+    <b>Sample Size:</b><span id="desc_sample_size"></span>
+    <b>Number of Sites:</b><span id="desc_num_sites"></span>
+    <b>Risk Level:</b><span id="desc_risk_level"></span>
+    <b>Has Inclusion/Exclusion Criteria?:</b><span id="desc_inc_exc_criteria"></span>
+    <b>Has Demographic Data?:</b><span id="desc_has_demographics"></span>
+    <b>Has a Prospective Study?:</b><span id="desc_is_prospective"></span>
+    <b>Has Subtype Analysis?:</b><span id="desc_subtype_analysis"></span>
+    <b>FDA Summary Link:</b><span id="desc_summary_link"></span>
     </div>
 </div>
 
@@ -368,6 +372,12 @@ window.onload = function() {
 
   $( "#figure" ).on("mouseover", "i", function() {
     $('[data-toggle="tooltip"]').tooltip()
+    var device_name = $(this).attr('id')
+    var vals = devices[device_name]
+    vals.forEach(function (item, index) {
+        $('#desc_'+index).html(item)
+    });
+
 })
 
   $(function() {
