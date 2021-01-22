@@ -375,7 +375,8 @@ window.onload = function() {
 })
 
 $( "#figure" ).on("click", "i", function() {
-    $(this).toggleClass('hover')
+    $("#figure i").removeClass('hover')
+    $(this).addClass('hover')
     var device_name = $(this).attr('id')
     var vals = devices[device_name]
     for (var key in vals) {
