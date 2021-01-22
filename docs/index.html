@@ -375,7 +375,7 @@ window.onload = function() {
 })
 
 $( "#figure" ).on("click", "i", function() {
-    var device_name = $(this).attr('id').html()
+    var device_name = $(this).attr('id')
     var vals = devices[device_name]
     vals.forEach(function (item, index) {
         $('#desc_'+index).html(item)
