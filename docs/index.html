@@ -372,13 +372,16 @@ window.onload = function() {
 
   $( "#figure" ).on("mouseover", "i", function() {
     $('[data-toggle="tooltip"]').tooltip()
+})
+
+$( "#figure" ).on("click", "i", function() {
     var device_name = $(this).attr('id')
     var vals = devices[device_name]
     vals.forEach(function (item, index) {
         $('#desc_'+index).html(item)
     });
-
 })
+  
 
   $(function() {
     $('#table').bootstrapTable();
