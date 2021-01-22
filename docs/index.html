@@ -382,6 +382,10 @@ window.onload = function() {
     $('[data-toggle="tooltip"]').tooltip()
 })
 
+  $( "#database" ).on("mouseover", "div", function() {
+    $('[data-toggle="tooltip"]').tooltip()
+})
+
   $( "#figure" ).on("click", "i", function() {
     $("#figure i").removeClass('hover')
     $(this).addClass('hover')
