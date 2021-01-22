@@ -107,7 +107,7 @@
     transition: transform 0.2s, opacity 0.2s;
 }
 /* Effect 9a */
- .hovicon.effect-9.sub-a:hover:after, .hover {
+ .hovicon.effect-9.sub-a:hover:after, .hover, .multisite-hover, .highrisk-hover, .prospective-hover {
     -webkit-transform: scale(0.85);
     -moz-transform: scale(0.85);
     -ms-transform: scale(0.85);
