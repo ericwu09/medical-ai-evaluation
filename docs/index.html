@@ -433,6 +433,22 @@ function detailFormatter(index, row) {
 }
 </script>
 
+
+<div id="database" class="container-fluid mx-lg-auto px-md-5 py-md-5 bg-light">
+
+    <h2>Methodology Notes</h2>
+
+<div class="container">
+	Evaluation feature details:<br />
+		<li>Note: The data collected for the database is based only on publicly available information from FDA.gov. </li>
+        <li>Sample_size: Some reports contain multiple sub-studies with different sample sizes. In these cases, we report only the maximum sample size across sub-studies.</li>
+        <li>Risk_level: Refers to the overall importance of the device toward treatment of a disease. The four tiers are based on IMDRF guidelines <a href="https://www.fdanews.com/ext/resources/files/10-14/10-14-IMDRF-SaMD.pdf?1520753258">detailed here</a>.</li>
+        <li>Is_prospective: Prospective studies are defined as clinical studies in which the data is collected concurrently with device deployment.
+        <li>We report 'NA' values when the summary report does not contain information regarding the feature.</li>
+      </div>
+
+</div>
+
 <footer class="footer mt-5">
       <div class="container">
         <span class="text-muted">Content available under the <a href="https://github.com/ericwu09/medical-ai-evaluation/blob/main/LICENSE" target="_blank">MIT license.</a> See errors or mistakes? Please reach out to the authors at wue {at} stanford.edu.</span>
